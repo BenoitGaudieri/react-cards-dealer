@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Card from "./Card";
+import "./Deck.css";
 
 const API_BASE_URL = `https://deckofcardsapi.com/api/deck`;
 
@@ -46,14 +47,19 @@ export default class Deck extends Component {
 
     render() {
         const cards = this.state.drawn.map((c) => (
-            <Card name={c.name} image={c.image} />
+            <Card key={c.id} name={c.name} image={c.image} />
         ));
 
         return (
-            <div>
-                <button onClick={this.getCard}>Get cards</button>
-                <h2>CARD</h2>
-                {cards}
+            <div className="Deck">
+                <h1 className="Deck-title"> ♥ Card Dealer ♦</h1>
+                <h2 className="Deck-title subtitle">
+                    ♠ Shuffle&Deal demo made with React ♣
+                </h2>
+                <button className="Deck-btn" onClick={this.getCard}>
+                    Get cards
+                </button>
+                <div className="Deck-cardarea">{cards}</div>
             </div>
         );
     }
