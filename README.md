@@ -1,4 +1,4 @@
-# Shuffle & Dealer
+# Shuffle & Deal
 
 Demo API app made with react.
 
